@@ -94,7 +94,8 @@ def create_report_and_email(path, txt, email_list=""):
 
 repos = [
     "C:\\Users\\C376038\\Documents\\python_code\\packages\\instutil_pak\\instutil",
-    "C:/Users/C376038/Documents/inst_suite/python/inst_code"
+    "C:/Users/C376038/Documents/inst_suite/python/inst_code",
+    "C:\\Users\\C376038\\Documents\\python_code\\packages\\cvd_sql"
 ]
 
 
@@ -103,9 +104,12 @@ repos = [
 txt = weekly_report(
     path_to_repos=repos,
     end=dt.datetime.now(ZoneInfo('EST')),
-    start=dt.datetime.now(ZoneInfo('EST')) - dt.timedelta(days=10),
+    start=dt.datetime.now(ZoneInfo('EST')) - dt.timedelta(days=11),
     other_update_path="outsidereport.txt"
 )
+
+print(txt)
+
 create_report_and_email(path, txt, "McCamy, James W <JMCCAMY@vitro.com>; Wilson, Carl <CAWILSON@vitro.com>")
 
 
